@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Thanh Tran Logistics – Publisher of AIO Kids, the all-in-one wholesale children's fashion ordering app. Available on Android & iOS." />
+  <meta name="keywords" content="Thanh Tran Logistics, AIO Kids, wholesale children fashion, kids clothing app, wholesale fashion app, children's apparel ordering" />
+  <meta property="og:title" content="Thanh Tran Logistics – AIO Kids Wholesale App" />
+  <meta property="og:description" content="Thanh Tran Logistics Company Limited publishes AIO Kids – the smartest wholesale ordering platform for children's fashion." />
+  <meta property="og:type" content="website" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Thanh Tran Logistics – AIO Kids Wholesale Fashion App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --coral: #FF6B6B;
+      --coral-light: #FF8E8E;
+      --coral-dark: #E85555;
+      --teal: #2BBCB2;
+      --teal-light: #4DCFC5;
+      --teal-dark: #1E9890;
+      --amber: #FFB347;
+      --cream: #FFF8F0;
+      --warm-white: #FFFCF8;
+      --dark: #1A1A2E;
+      --dark-soft: #2D2D44;
+      --text: #3D3D5C;
+      --text-soft: #6B6B8A;
+      --border: #F0ECE8;
+      --shadow: rgba(255, 107, 107, 0.15);
+      --shadow-teal: rgba(43, 188, 178, 0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--warm-white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255, 252, 248, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 4px 30px var(--shadow); }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo-icon {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--coral), var(--amber));
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 12px var(--shadow);
+      flex-shrink: 0;
+    }
+    .nav-logo-text {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--dark);
+      white-space: nowrap;
+    }
+    .nav-logo-text span { color: var(--coral); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--coral); }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--coral), var(--coral-dark));
+      color: white !important;
+      padding: 9px 22px;
+      border-radius: 50px;
+      font-weight: 700 !important;
+      font-size: 0.875rem !important;
+      box-shadow: 0 4px 15px var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s !important;
+    }
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px var(--shadow) !important;
+      color: white !important;
+    }
+
+    .nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--dark); border-radius: 2px; transition: 0.3s; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      padding: 100px 5% 80px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--cream) 0%, #FFF0E8 40%, #E8F9F8 100%);
+      z-index: 0;
+    }
+
+    /* Decorative blobs */
+    .hero-blob-1 {
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,107,107,0.12) 0%, transparent 70%);
+      top: -100px; right: -100px;
+      border-radius: 50%;
+      z-index: 0;
+    }
+    .hero-blob-2 {
+      position: absolute;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(43,188,178,0.12) 0%, transparent 70%);
+      bottom: -50px; left: 10%;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    /* Floating shapes */
+    .floating-shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: float 6s ease-in-out infinite;
+      z-index: 0;
+    }
+    .floating-shape:nth-child(3) { width: 20px; height: 20px; background: var(--coral); top: 20%; left: 15%; animation-delay: 0s; }
+    .floating-shape:nth-child(4) { width: 14px; height: 14px; background: var(--teal); top: 60%; left: 8%; animation-delay: 1s; }
+    .floating-shape:nth-child(5) { width: 18px; height: 18px; background: var(--amber); top: 30%; right: 20%; animation-delay: 2s; }
+    .floating-shape:nth-child(6) { width: 12px; height: 12px; background: var(--coral-light); bottom: 30%; right: 15%; animation-delay: 0.5s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,107,107,0.1);
+      border: 1px solid rgba(255,107,107,0.25);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--coral-dark);
+      margin-bottom: 20px;
+      animation: fadeInUp 0.6s ease both;
+    }
+
+    .hero-title {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--dark);
+      margin-bottom: 20px;
+      animation: fadeInUp 0.6s ease 0.1s both;
+    }
+    .hero-title .highlight {
+      background: linear-gradient(135deg, var(--coral), var(--amber));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-soft);
+      max-width: 500px;
+      margin-bottom: 36px;
+      animation: fadeInUp 0.6s ease 0.2s both;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.6s ease 0.3s both;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--coral), var(--coral-dark));
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 8px 30px var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px var(--shadow); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      color: var(--dark);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 2px solid var(--border);
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+    .btn-secondary:hover { transform: translateY(-2px); border-color: var(--teal); box-shadow: 0 8px 25px var(--shadow-teal); }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 40px;
+      animation: fadeInUp 0.6s ease 0.4s both;
+    }
+    .hero-stat { text-align: left; }
+    .hero-stat-num {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+    .hero-stat-num span { color: var(--coral); }
+    .hero-stat-label {
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      font-weight: 600;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      animation: fadeInRight 0.8s ease 0.3s both;
+    }
+
+    .hero-phone {
+      width: 260px;
+      height: 520px;
+      background: var(--dark);
+      border-radius: 40px;
+      box-shadow: 0 30px 80px rgba(26,26,46,0.35), 0 0 0 8px rgba(255,255,255,0.05);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .hero-phone::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 90px; height: 26px;
+      background: var(--dark);
+      border-radius: 0 0 16px 16px;
+      z-index: 10;
+      box-shadow: 0 2px 0 rgba(255,255,255,0.05);
+    }
+
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(175deg, var(--cream), white);
+      border-radius: 32px;
+      overflow: hidden;
+      padding: 40px 0 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .phone-app-header {
+      padding: 12px 20px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .phone-app-logo {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: var(--dark);
+    }
+    .phone-app-logo span { color: var(--coral); }
+    .phone-app-avatar {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+    }
+
+    .phone-categories {
+      display: flex;
+      gap: 8px;
+      padding: 0 16px 12px;
+      overflow-x: auto;
+    }
+    .phone-cat-chip {
+      flex-shrink: 0;
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 50px;
+      white-space: nowrap;
+    }
+    .phone-cat-chip.active { background: var(--coral); color: white; }
+    .phone-cat-chip:not(.active) { background: var(--border); color: var(--text-soft); }
+
+    .phone-products {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      padding: 0 14px;
+      flex: 1;
+    }
+
+    .phone-product-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .phone-product-img {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+    .phone-product-img:nth-child(1) { background: linear-gradient(135deg, #FFE4E4, #FFD0D0); }
+    .phone-product-info { padding: 6px 8px 8px; }
+    .phone-product-name {
+      font-size: 0.55rem;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+    .phone-product-price {
+      font-size: 0.6rem;
+      font-weight: 800;
+      color: var(--coral);
+      margin-top: 2px;
+    }
+
+    .phone-product-colors {
+      background: linear-gradient(135deg, #FFE9D8, #FFF0E8);
+      height: 80px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+    }
+    .phone-product-teal-bg {
+      background: linear-gradient(135deg, #D8F5F4, #C8EEE8);
+      height: 80px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+    }
+    .phone-product-mint-bg {
+      background: linear-gradient(135deg, #E8F8E4, #D8F0D0);
+      height: 80px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      background: white;
+      border-radius: 16px;
+      padding: 12px 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: floatCard 4s ease-in-out infinite;
+    }
+    .hero-floating-card.card-1 { left: -30px; top: 25%; animation-delay: 0s; }
+    .hero-floating-card.card-2 { right: -20px; bottom: 28%; animation-delay: 2s; }
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .fc-icon { font-size: 1.4rem; }
+    .fc-text { font-size: 0.72rem; }
+    .fc-text strong { display: block; font-weight: 800; color: var(--dark); font-size: 0.8rem; }
+    .fc-text span { color: var(--text-soft); font-size: 0.68rem; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 90px 5%; }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header .section-desc { margin: 0 auto; }
+
+    /* ── TRUST STRIP ── */
+    .trust-strip {
+      background: var(--dark);
+      padding: 22px 5%;
+    }
+    .trust-strip-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .trust-icon {
+      font-size: 1.3rem;
+    }
+
+    /* ── FEATURES ── */
+    .features-section { background: var(--cream); }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .feature-card {
+      background: white;
+      border-radius: 24px;
+      padding: 36px 30px;
+      border: 1px solid var(--border);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: linear-gradient(90deg, var(--coral), var(--amber));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .feature-card:hover::before { transform: scaleX(1); }
+    .feature-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px var(--shadow); }
+
+    .feature-icon-wrap {
+      width: 60px; height: 60px;
+      border-radius: 18px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+    .fi-coral { background: linear-gradient(135deg, rgba(255,107,107,0.15), rgba(255,107,107,0.05)); }
+    .fi-teal { background: linear-gradient(135deg, rgba(43,188,178,0.15), rgba(43,188,178,0.05)); }
+    .fi-amber { background: linear-gradient(135deg, rgba(255,179,71,0.15), rgba(255,179,71,0.05)); }
+
+    .feature-title {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    .feature-desc { font-size: 0.9rem; color: var(--text-soft); line-height: 1.65; }
+
+    /* ── HOW IT WORKS ── */
+    .how-section { background: white; }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 40px; left: 12%;
+      right: 12%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--coral), var(--teal));
+      z-index: 0;
+    }
+    .step-card {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .step-num {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: white;
+      border: 3px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 2rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .step-card:hover .step-num { transform: scale(1.1); box-shadow: 0 12px 40px var(--shadow); }
+    .step-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 6px;
+    }
+    .step-title {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .step-desc { font-size: 0.85rem; color: var(--text-soft); line-height: 1.6; }
+
+    /* ── APP SCREENSHOT SECTION ── */
+    .screenshots-section {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-soft) 100%);
+      padding: 90px 5%;
+      position: relative;
+      overflow: hidden;
+    }
+    .screenshots-section::before {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(255,107,107,0.15) 0%, transparent 70%);
+      top: -100px; right: -100px;
+      border-radius: 50%;
+    }
+    .screenshots-section .section-title { color: white; }
+    .screenshots-section .section-desc { color: rgba(255,255,255,0.6); }
+    .screenshots-section .section-tag { color: var(--coral-light); }
+
+    .screenshots-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .app-feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .app-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      transition: background 0.2s, border-color 0.2s;
+      cursor: default;
+    }
+    .app-feature-item:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,107,107,0.4);
+    }
+    .afi-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .afi-text strong {
+      display: block;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: white;
+      margin-bottom: 4px;
+    }
+    .afi-text span { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+    .mock-screen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .mock-phone {
+      width: 200px;
+      height: 400px;
+      background: #111;
+      border-radius: 30px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .mock-phone::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 70px; height: 20px;
+      background: #111;
+      border-radius: 0 0 12px 12px;
+      z-index: 10;
+    }
+    .mock-phone-inner {
+      width: 100%;
+      height: 100%;
+      background: var(--cream);
+      border-radius: 22px;
+      overflow: hidden;
+      padding: 28px 0 0;
+    }
+
+    .mp-header {
+      background: var(--coral);
+      padding: 12px 16px;
+      color: white;
+    }
+    .mp-header-title {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+    }
+    .mp-header-sub {
+      font-size: 0.55rem;
+      opacity: 0.8;
+      margin-top: 2px;
+    }
+
+    .mp-search {
+      margin: 10px 12px;
+      background: white;
+      border-radius: 8px;
+      padding: 7px 10px;
+      font-size: 0.55rem;
+      color: var(--text-soft);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      padding: 0 10px;
+    }
+
+    .mp-product {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .mp-product-img {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    .mp-product-info { padding: 5px 7px; }
+    .mp-product-name { font-size: 0.45rem; font-weight: 700; color: var(--dark); }
+    .mp-product-price { font-size: 0.5rem; color: var(--coral); font-weight: 800; }
+
+    .mp-nav {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 8px 0 12px;
+      border-top: 1px solid var(--border);
+    }
+    .mp-nav-item { font-size: 1.1rem; }
+
+    .mock-phone.secondary {
+      width: 160px;
+      height: 320px;
+      opacity: 0.6;
+      transform: translateY(30px);
+    }
+
+    /* ── DOWNLOAD ── */
+    .download-section {
+      background: linear-gradient(135deg, var(--cream), #FFF0E8);
+      text-align: center;
+    }
+    .download-inner { max-width: 700px; margin: 0 auto; }
+    .download-badge-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,107,107,0.1);
+      border: 1px solid rgba(255,107,107,0.2);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--coral-dark);
+      margin-bottom: 20px;
+    }
+    .download-title {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+    .download-desc {
+      font-size: 1rem;
+      color: var(--text-soft);
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .download-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .store-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--dark);
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 30px rgba(26,26,46,0.2);
+    }
+    .store-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 45px rgba(26,26,46,0.3); }
+    .store-btn-icon { font-size: 2rem; }
+    .store-btn-text { text-align: left; }
+    .store-btn-sub { font-size: 0.65rem; opacity: 0.6; display: block; }
+    .store-btn-name { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1rem; display: block; }
+
+    /* ── ABOUT ── */
+    .about-section { background: white; }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-img-wrap {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    .about-img-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--cream), #FFE8D8, #D8F5F4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .about-img-emoji { font-size: 5rem; }
+    .about-img-text {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--dark);
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -20px; right: -20px;
+      background: white;
+      border-radius: 20px;
+      padding: 16px 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+      text-align: center;
+    }
+    .about-badge-num {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, var(--coral), var(--amber));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-badge-text { font-size: 0.72rem; color: var(--text-soft); font-weight: 600; }
+
+    .about-company-name {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .about-company-sub {
+      font-size: 0.85rem;
+      color: var(--teal);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .about-desc {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+    .about-contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .about-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: var(--text);
+    }
+    .aci-icon {
+      width: 36px; height: 36px;
+      background: var(--cream);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.7);
+      padding: 60px 5% 30px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 48px;
+    }
+    .footer-brand-name {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: white;
+      margin-bottom: 4px;
+    }
+    .footer-brand-name span { color: var(--coral); }
+    .footer-brand-company {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 16px;
+    }
+    .footer-brand-desc {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.5);
+      max-width: 280px;
+    }
+    .footer-col-title {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: white;
+      margin-bottom: 18px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--coral-light); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+    .footer-legal {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-legal a {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-desc { margin: 0 auto 32px; }
+      .hero-buttons { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-visual { display: none; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .steps-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .steps-grid::before { display: none; }
+      .screenshots-content { grid-template-columns: 1fr; }
+      .mock-screen { order: -1; }
+      .about-inner { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .features-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .trust-strip-inner { gap: 24px; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo" id="nav-logo-link">
+      <div class="nav-logo-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Hanger hook -->
+          <path d="M12 3 C12 3 10.5 3 10.5 4.5 C10.5 5.5 11.2 6 12 6" stroke="white" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+          <!-- Hanger bar -->
+          <path d="M12 6 L3.5 13.5 C2.5 14.3 3 16 4.2 16 L19.8 16 C21 16 21.5 14.3 20.5 13.5 Z" stroke="white" stroke-width="1.6" stroke-linejoin="round" fill="rgba(255,255,255,0.25)"/>
+          <!-- Rack base -->
+          <rect x="3" y="18" width="18" height="2.5" rx="1.25" fill="white" opacity="0.9"/>
+          <!-- Heart accent -->
+          <path d="M12 11.5 C12 11.5 10.5 10.2 10.5 9.3 C10.5 8.5 11.2 8 12 8.7 C12.8 8 13.5 8.5 13.5 9.3 C13.5 10.2 12 11.5 12 11.5Z" fill="white"/>
+        </svg>
+      </div>
+      <span class="nav-logo-text">Thanh Tran <span>Logistics</span></span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#download" class="nav-cta" id="nav-download-btn">Download App</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger" role="button" aria-label="Toggle navigation" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-blob-1"></div>
+    <div class="hero-blob-2"></div>
+    <div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">✨ All-In-One Wholesale Platform</div>
+        <h1 class="hero-title">
+          The Smarter Way to<br />
+          Order <span class="highlight">Kids' Fashion</span><br />
+          Wholesale
+        </h1>
+        <p class="hero-desc">
+          AIO Kids connects retailers, shop owners, and distributors with top children's fashion brands. Browse thousands of trendy styles, place bulk orders, and manage your inventory — all from your phone.
+        </p>
+        <div class="hero-buttons">
+          <a href="https://play.google.com/store/apps/details?id=com.qk.aio.kids" id="hero-google-play-btn" class="btn-primary" target="_blank" rel="noopener">
+            <span>🎮</span> Google Play
+          </a>
+          <a href="#download" id="hero-app-store-btn" class="btn-secondary">
+            <span>🍎</span> App Store (Soon)
+          </a>
+        </div>
+
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-phone">
+          <div class="phone-screen">
+            <div class="phone-app-header">
+              <span class="phone-app-logo">AIO<span>Kids</span></span>
+              <div class="phone-app-avatar"></div>
+            </div>
+            <div class="phone-categories">
+              <span class="phone-cat-chip active">All</span>
+              <span class="phone-cat-chip">Newborn</span>
+              <span class="phone-cat-chip">Toddler</span>
+              <span class="phone-cat-chip">Girls</span>
+              <span class="phone-cat-chip">Boys</span>
+            </div>
+            <div class="phone-products">
+              <div class="phone-product-card">
+                <div class="phone-product-img" style="background:linear-gradient(135deg,#FFE4E4,#FFD0D0)">👗</div>
+                <div class="phone-product-info">
+                  <div class="phone-product-name">Girl Floral Dress</div>
+                  <div class="phone-product-price">$4.50/pc</div>
+                </div>
+              </div>
+              <div class="phone-product-card">
+                <div class="phone-product-colors" style="background:linear-gradient(135deg,#FFE9D8,#FFF0E8)">👕</div>
+                <div class="phone-product-info">
+                  <div class="phone-product-name">Boy Graphic Tee</div>
+                  <div class="phone-product-price">$3.20/pc</div>
+                </div>
+              </div>
+              <div class="phone-product-card">
+                <div class="phone-product-teal-bg" style="background:linear-gradient(135deg,#D8F5F4,#C8EEE8)">🧒</div>
+                <div class="phone-product-info">
+                  <div class="phone-product-name">Toddler Set</div>
+                  <div class="phone-product-price">$6.80/set</div>
+                </div>
+              </div>
+              <div class="phone-product-card">
+                <div class="phone-product-mint-bg" style="background:linear-gradient(135deg,#E8F8E4,#D8F0D0)">🩱</div>
+                <div class="phone-product-info">
+                  <div class="phone-product-name">Summer Romper</div>
+                  <div class="phone-product-price">$5.50/pc</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating cards -->
+        <div class="hero-floating-card card-1">
+          <span class="fc-icon">📦</span>
+          <div class="fc-text">
+            <strong>Order Placed</strong>
+            <span>50 units • Just now</span>
+          </div>
+        </div>
+        <div class="hero-floating-card card-2">
+          <span class="fc-icon">🚚</span>
+          <div class="fc-text">
+            <strong>Fast Delivery</strong>
+            <span>2–3 business days</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="trust-strip-inner">
+      <div class="trust-item"><span class="trust-icon">✅</span> Verified Suppliers</div>
+      <div class="trust-item"><span class="trust-icon">🔒</span> Secure Payments</div>
+      <div class="trust-item"><span class="trust-icon">📱</span> iOS & Android</div>
+      <div class="trust-item"><span class="trust-icon">🌏</span> Nationwide Delivery</div>
+      <div class="trust-item"><span class="trust-icon">🏢</span> Thanh Tran Logistics</div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="features-section" id="features">
+    <div class="section-header">
+      <div class="section-tag">Why Choose AIO Kids</div>
+      <h2 class="section-title">Everything You Need to Run<br />Your Kids' Fashion Business</h2>
+      <p class="section-desc">From browsing the latest collections to managing bulk orders and tracking shipments — AIO Kids has it all in one place.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap fi-coral">🛍️</div>
+        <h3 class="feature-title">Massive Product Catalog</h3>
+        <p class="feature-desc">Browse thousands of children's fashion items across all age groups — from newborns to teens. New collections added weekly.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon-wrap fi-teal">📊</div>
+        <h3 class="feature-title">Wholesale Pricing</h3>
+        <p class="feature-desc">Access exclusive wholesale prices with tiered discounts based on order volume. The more you order, the more you save.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon-wrap fi-amber">📦</div>
+        <h3 class="feature-title">Order Management</h3>
+        <p class="feature-desc">Track every order from placement to delivery in real-time. Get notifications at every stage of the fulfillment process.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap fi-coral">🔍</div>
+        <h3 class="feature-title">Smart Search & Filter</h3>
+        <p class="feature-desc">Find what you need instantly with intelligent search. Filter by age, size, category, color, season, and price range.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon-wrap fi-teal">💬</div>
+        <h3 class="feature-title">Direct Supplier Chat</h3>
+        <p class="feature-desc">Message suppliers directly within the app to negotiate prices, request custom orders, or get product information.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon-wrap fi-amber">📈</div>
+        <h3 class="feature-title">Sales Analytics</h3>
+        <p class="feature-desc">Understand your business with built-in reports on bestsellers, order history, and spending trends to optimize your buying.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section" id="how-it-works">
+    <div class="section-header">
+      <div class="section-tag">Simple Process</div>
+      <h2 class="section-title">Start Ordering in 4 Easy Steps</h2>
+      <p class="section-desc">Get up and running in minutes. No complicated setup required — just download, register, and start growing your business.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-num">📲</div>
+        <div class="step-label">Step 01</div>
+        <h3 class="step-title">Download & Register</h3>
+        <p class="step-desc">Download the AIO Kids app from Google Play or the App Store and create your free business account.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-num">🔎</div>
+        <div class="step-label">Step 02</div>
+        <h3 class="step-title">Browse Collections</h3>
+        <p class="step-desc">Explore thousands of children's fashion items with detailed photos, sizing guides, and wholesale price lists.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-num">🛒</div>
+        <div class="step-label">Step 03</div>
+        <h3 class="step-title">Place Your Order</h3>
+        <p class="step-desc">Add items to your cart, select quantities by size and color, confirm your order, and pay securely in-app.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-num">🚚</div>
+        <div class="step-label">Step 04</div>
+        <h3 class="step-title">Receive & Sell</h3>
+        <p class="step-desc">Your order is packaged and shipped directly to you. Track delivery and start selling to your customers right away.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP FEATURES DARK -->
+  <section class="screenshots-section" id="app-features">
+    <div class="screenshots-content">
+      <div>
+        <div class="section-tag">Built for Business</div>
+        <h2 class="section-title">A Professional App for<br />Serious Retailers</h2>
+        <p class="section-desc">AIO Kids is purpose-built for wholesale fashion buyers who need speed, accuracy, and reliability in every transaction.</p>
+        <br /><br />
+        <ul class="app-feature-list">
+          <li class="app-feature-item reveal">
+            <span class="afi-icon">⚡</span>
+            <div class="afi-text">
+              <strong>Lightning-Fast Ordering</strong>
+              <span>Place large orders in under 2 minutes with our streamlined checkout flow.</span>
+            </div>
+          </li>
+          <li class="app-feature-item reveal reveal-delay-1">
+            <span class="afi-icon">📷</span>
+            <div class="afi-text">
+              <strong>High-Resolution Product Photos</strong>
+              <span>Every product features multiple angles and zoom to inspect fabric and details.</span>
+            </div>
+          </li>
+          <li class="app-feature-item reveal reveal-delay-2">
+            <span class="afi-icon">💳</span>
+            <div class="afi-text">
+              <strong>Flexible Payment Options</strong>
+              <span>Pay via bank transfer, e-wallet, or buy-now-pay-later for qualified accounts.</span>
+            </div>
+          </li>
+          <li class="app-feature-item reveal reveal-delay-3">
+            <span class="afi-icon">🌟</span>
+            <div class="afi-text">
+              <strong>Loyalty & Rewards Program</strong>
+              <span>Earn points on every order and redeem for discounts on future purchases.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mock-screen reveal">
+        <div class="mock-phone">
+          <div class="mock-phone-inner">
+            <div class="mp-header">
+              <div class="mp-header-title">🛍️ AIO Kids Wholesale</div>
+              <div class="mp-header-sub">250+ new arrivals this week</div>
+            </div>
+            <div class="mp-search">🔍 Search products, brands...</div>
+            <div class="mp-grid">
+              <div class="mp-product">
+                <div class="mp-product-img" style="background:linear-gradient(135deg,#FFE4E4,#FFD0D0)">👗</div>
+                <div class="mp-product-info">
+                  <div class="mp-product-name">Floral Dress</div>
+                  <div class="mp-product-price">$4.50</div>
+                </div>
+              </div>
+              <div class="mp-product">
+                <div class="mp-product-img" style="background:linear-gradient(135deg,#D8F0FF,#C8E4FF)">👕</div>
+                <div class="mp-product-info">
+                  <div class="mp-product-name">Boy's Tee Set</div>
+                  <div class="mp-product-price">$3.20</div>
+                </div>
+              </div>
+              <div class="mp-product">
+                <div class="mp-product-img" style="background:linear-gradient(135deg,#FFF0D8,#FFE4C0)">🧢</div>
+                <div class="mp-product-info">
+                  <div class="mp-product-name">Cap & Shorts</div>
+                  <div class="mp-product-price">$5.80</div>
+                </div>
+              </div>
+              <div class="mp-product">
+                <div class="mp-product-img" style="background:linear-gradient(135deg,#E4FFE4,#D0FFD4)">🩱</div>
+                <div class="mp-product-info">
+                  <div class="mp-product-name">Romper Set</div>
+                  <div class="mp-product-price">$6.50</div>
+                </div>
+              </div>
+            </div>
+            <div class="mp-nav">
+              <span class="mp-nav-item">🏠</span>
+              <span class="mp-nav-item">🔍</span>
+              <span class="mp-nav-item">🛒</span>
+              <span class="mp-nav-item">👤</span>
+            </div>
+          </div>
+        </div>
+        <div class="mock-phone secondary">
+          <div class="mock-phone-inner">
+            <div class="mp-header" style="background: var(--teal);">
+              <div class="mp-header-title">📦 My Orders</div>
+              <div class="mp-header-sub">3 active shipments</div>
+            </div>
+            <div style="padding:12px 10px;display:flex;flex-direction:column;gap:8px;">
+              <div style="background:white;border-radius:10px;padding:10px;font-size:0.5rem;color:var(--dark);">
+                <div style="font-weight:800;color:var(--teal)">Order #1042</div>
+                <div style="color:var(--text-soft);">50 pcs • In Transit</div>
+              </div>
+              <div style="background:white;border-radius:10px;padding:10px;font-size:0.5rem;color:var(--dark);">
+                <div style="font-weight:800;color:var(--amber)">Order #1038</div>
+                <div style="color:var(--text-soft);">100 pcs • Processing</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section class="download-section" id="download">
+    <div class="download-inner">
+      <div class="download-badge-wrap">📱 Available Now</div>
+      <h2 class="download-title">Get AIO Kids Today</h2>
+      <p class="download-desc">Join thousands of retailers already using AIO Kids to grow their children's fashion business. Free to download, easy to use.</p>
+      <div class="download-buttons">
+        <a href="https://play.google.com/store/apps/details?id=com.qk.aio.kids" id="download-google-btn" class="store-btn" target="_blank" rel="noopener">
+          <span class="store-btn-icon">▶</span>
+          <div class="store-btn-text">
+            <span class="store-btn-sub">Get it on</span>
+            <span class="store-btn-name">Google Play</span>
+          </div>
+        </a>
+        <a href="#" id="download-apple-btn" class="store-btn" style="background: linear-gradient(135deg, #1a1a2e, #2d2d44); cursor: default; opacity: 0.85;">
+          <span class="store-btn-icon">🍎</span>
+          <div class="store-btn-text">
+            <span class="store-btn-sub">Coming soon on</span>
+            <span class="store-btn-name">App Store</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-visual reveal">
+        <div class="about-img-wrap">
+          <img src="about-photo.jpg" alt="AIO Kids children's fashion wholesale showroom" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div class="about-badge">
+          <div class="about-badge-num">5+</div>
+          <div class="about-badge-text">Years in Business</div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <div class="section-tag">About the Developer</div>
+        <div class="about-company-name">Thanh Tran Logistics<br />Company Limited</div>
+        <div class="about-company-sub">Developer of AIO Kids App</div>
+        <p class="about-desc">
+          Thanh Tran Logistics Company Limited is a Vietnam-based technology and logistics company specializing in wholesale fashion supply chain solutions for children's apparel. We built AIO Kids to simplify the ordering process for retailers, shop owners, and distributors across the region.
+        </p>
+        <p class="about-desc">
+          Our mission is to make children's fashion wholesale accessible, transparent, and efficient — empowering small businesses and entrepreneurs to compete and grow in today's market.
+        </p>
+        <ul class="about-contact-list">
+          <li class="about-contact-item">
+            <span class="aci-icon">🌐</span>
+            <span>Thanh Tran Logistics Company Limited</span>
+          </li>
+          <li class="about-contact-item">
+            <span class="aci-icon">📍</span>
+            <span>Vietnam</span>
+          </li>
+          <li class="about-contact-item">
+            <span class="aci-icon">📧</span>
+            <a href="mailto:support@aiokids.app" id="contact-email" style="color: var(--teal); text-decoration: none; font-weight: 600;">support@aiokids.app</a>
+          </li>
+          <li class="about-contact-item">
+            <span class="aci-icon">📱</span>
+            <span>AIO Kids — com.qk.aio.kids</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">Thanh Tran <span>Logistics</span></div>
+          <div class="footer-brand-company">Publisher of AIO Kids — Wholesale Fashion App</div>
+          <p class="footer-brand-desc">Thanh Tran Logistics Company Limited builds tools for the wholesale children's fashion industry. Our flagship app, AIO Kids, serves retailers and distributors across Vietnam.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">App</div>
+          <ul class="footer-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#download">Download</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.qk.aio.kids" target="_blank" rel="noopener">Google Play</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="privacy.html" id="footer-privacy-link">Privacy Policy</a></li>
+            <li><a href="terms.html" id="footer-terms-link">Terms of Service</a></li>
+            <li><a href="mailto:support@aiokids.app" id="footer-contact-link">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2024 Thanh Tran Logistics Company Limited. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="privacy.html" id="footer-privacy-link-2">Privacy Policy</a>
+          <a href="terms.html" id="footer-terms-link-2">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.position = 'absolute';
+      navLinks.style.top = '68px';
+      navLinks.style.left = '0';
+      navLinks.style.right = '0';
+      navLinks.style.background = 'rgba(255,252,248,0.98)';
+      navLinks.style.padding = '20px 5%';
+      navLinks.style.borderBottom = '1px solid #F0ECE8';
+      navLinks.style.zIndex = '999';
+    });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Close mobile nav if open
+          navLinks.style.display = '';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
